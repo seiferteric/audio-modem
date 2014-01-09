@@ -1,3 +1,7 @@
+This was a cool project I did in school to send text messages over audio (or using an FM radio as I did) waves. This was featured on hackaday some time ago http://hackaday.com/2007/12/13/ipod-transmitter-radio-modem/ . This link is dead as I changed my blog, its here now: http://seiferteric.com/?p=319
+
+The code is pretty bad but it was a proof of concept!
+
 To build both the send and receive programs, just type "make". 
 Two binaries, send and rec will be created. You must have the
 SDL and alsa development libraries to build this, otherwise
