@@ -21,9 +21,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <alsa/asoundlib.h>
 #include <stdio.h>
 #include <math.h>
-#define BAUD 9600
 
-int main() {
+int main(int argc, char* argv[]) {
 	int rc;
 	int size;
 	snd_pcm_t *handle=NULL;
@@ -33,6 +32,14 @@ int main() {
 	snd_pcm_uframes_t frames = 1024;
 	//unsigned int frames = 1024;
 	short *buffer=NULL;
+
+  unsigned int BAUD = 100;
+  if(argc > 1) {
+    if(!sscanf(argv[1], "%5u", &BAUD) || BAUD > 15000 || BAUD < 1) {
+      fprintf(stderr, "Invalid BAUD specified, using default...\n");
+      BAUD = 100;
+    }
+  }
 
 	rc = snd_pcm_open(&handle, "default", SND_PCM_STREAM_CAPTURE, 0);
 	if (rc < 0)

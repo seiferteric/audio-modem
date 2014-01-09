@@ -24,7 +24,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 
 #define PI 3.14159
-#define BAUD 100
 
 unsigned int offset	= 0;
 unsigned int nsamples	= 0;
@@ -71,7 +70,7 @@ int init_me()
 
 	return 0;
 }
-int transmit_string(char* str)
+int transmit_string(char* str, unsigned int BAUD)
 {	
 
 	unsigned short str_len	= strlen(str);

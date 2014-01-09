@@ -25,6 +25,14 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 int main(int argc, char* argv[])
 {
+  unsigned int BAUD = 100;
+  if(argc > 1) {
+    if(!sscanf(argv[1], "%5u", &BAUD) || BAUD > 15000 || BAUD < 1) {
+      fprintf(stderr, "Invalid BAUD specified, using default...\n");
+      BAUD = 100;
+    }
+  }
+  printf("BAUD: %u\n", BAUD);
 	if(SDL_Init(SDL_INIT_AUDIO) == -1)
 	{
 		printf("SDL_Init failed: %s\n", SDL_GetError());
@@ -56,7 +64,7 @@ int main(int argc, char* argv[])
 	*/				
 		if(tx_str && (rlen+1 < 0xFFFF) && len!=-1)
 		{
-			if(transmit_string(tx_str) == -1)
+			if(transmit_string(tx_str, BAUD) == -1)
 				printf("Failed to open audio interface!");
 			
 		}
