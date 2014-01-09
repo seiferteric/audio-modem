@@ -1,0 +1,6 @@
+To build both the send and receive programs, just type "make". 
+Two binaries, send and rec will be created. You must have the
+SDL and alsa development libraries to build this, otherwise
+use the binaries provided. To terminate the programs right
+now, you have to use Ctrl-c :( sorry about that, I will fix
+this soon once finals are over!
