@@ -58,7 +58,7 @@ int main() {
 	snd_pcm_hw_params_get_rate_numden(params, &val, &den);
 	size = frames * 2;
 	
-	printf("frames: %u\n", frames);
+	printf("frames: %lu\n", frames);
 	buffer = (short *) malloc(size);
 	//snd_pcm_hw_params_get_period_time(params, &val, &dir);
 	printf("samples/sec: %u/%u\n", val, den);

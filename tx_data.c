@@ -59,7 +59,7 @@ int init_me()
 	SDL_AudioSpec rec;
 	if(SDL_OpenAudio(&des, &rec) == -1)
 	{
-		printf(SDL_GetError());
+		printf("SDL_Init failed: %s\n", SDL_GetError());
 		exit(-1);
 	}
 	if(rec.freq != des.freq)

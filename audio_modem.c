@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 {
 	if(SDL_Init(SDL_INIT_AUDIO) == -1)
 	{
-		printf(SDL_GetError());
+		printf("SDL_Init failed: %s\n", SDL_GetError());
 		return -1;
 	}
 	atexit(SDL_Quit);
@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 	while(1)
 	{	
 		int len		= 0;
-		int rlen	= 0;
+		size_t rlen	= 0;
 		char* tx_str	= NULL;	
 		len = getline(&tx_str, &rlen, stdin);
 	/*
