@@ -179,10 +179,12 @@ int main(int argc, char* argv[]) {
 								default:
 								msg_string[msg_read-2]=byte_rec;
 								msg_read++;
+                                putchar(byte_rec);
+                                fflush(0);
 								if(msg_read==msg_len+2)
 								{
-									printf("%s", msg_string);
-									fflush(0);
+									//printf("%s", msg_string);
+									//fflush(0);
 									free(msg_string);
 									msg_string	= NULL;
 									msg		= 0;
