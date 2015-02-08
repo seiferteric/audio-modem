@@ -1,6 +1,6 @@
 /*
 Audio Modem Terminal V 0.0.1  
-Copyrite (C) 2007 Eric Seifert
+Copyright (C) 2007 Eric Seifert
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
